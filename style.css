@@ -37,10 +37,19 @@
     position: relative;
 }
 
+.input {
+    text-align: right;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
 .output {
     bottom: 0px;
-    position: absolute;
     text-align: right;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    font-size: 2rem;
 }
 
 /* clear and delete button formatting */ 
@@ -82,7 +91,7 @@
     background-color: #50C5C7;
 }
 
-.digitKey {
+.key {
     border: 2px solid black;
     padding: 2rem;
     margin-left: 5px;
@@ -92,6 +101,20 @@
 }
 
 .digitKey:hover {
+    cursor: pointer;
+    background-color: #FFC663;
+}
+
+.operatorKey {
+    border: 2px solid black;
+    padding: 2rem;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.operatorKey:hover {
     cursor: pointer;
     background-color: #FFC663;
 }
