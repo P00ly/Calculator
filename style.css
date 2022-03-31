@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+    background-color: aliceblue;
 }
 
 #title {
@@ -19,15 +23,24 @@
 
 .frame {
     border: 2px solid black;
-    height: 650px;
+    height: 700px;
     width: 400px;
     border-radius: 10px;
+    background-color: #50C5C7;
+    box-shadow: 5px 5px #0B6263;
 }
-
+/*screen input and output */
 .screen {
     border: 2px solid black;
     height: 150px;
     margin: 1rem;
+    position: relative;
+}
+
+.output {
+    bottom: 0px;
+    position: absolute;
+    text-align: right;
 }
 
 /* clear and delete button formatting */ 
@@ -35,6 +48,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    background-color: #50C5C7;
 }
 
 .clearBtn {
@@ -50,7 +64,8 @@
 }
 
 .clearBtn:hover {
-    
+    cursor: pointer;
+    background-color: #FFC663;
 }
 
 /* digit keypad */
@@ -59,10 +74,12 @@
     padding-top: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    background-color: #50C5C7;
 }
 
 .column {
     flex: 1;
+    background-color: #50C5C7;
 }
 
 .digitKey {
@@ -71,4 +88,10 @@
     margin-left: 5px;
     margin-bottom: 5px;
     border-radius: 10px;
+    font-size: 20px;
+}
+
+.digitKey:hover {
+    cursor: pointer;
+    background-color: #FFC663;
 }
