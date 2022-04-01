@@ -53,7 +53,16 @@ function divide(...num) {
 
 //Operate
 function operate(a, b, operator) {
-    
+    switch (operator) {
+        case '÷':
+            return divide(a, b)
+        case 'x':   
+            return multiply(a, b)
+        case '-':
+            return subtract(a, b)
+        case 'add':
+            return add(a, b)
+        default:
+            return null 
+    }
 }
-
-
