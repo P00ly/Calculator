@@ -16,8 +16,8 @@
   <div class="box">
     <div id="frame" class="frame">
         <div id="screen" class="screen">
-            <div id="input" class="input">0</div>
-            <div id="output" class="output">0</div>
+            <div id="lastOperation" class="input">0</div>
+            <div id="currentOperation" class="output">0</div>
         </div>
         <div id="deleteBox" class="deleteBox">
             <div id="clearBtn" class="clearBtn">clear</div>
@@ -25,28 +25,28 @@
         </div>
         <div id="keypad" class="keypad">
             <div class="column">
-                <button id="seven" class="key">7</button>
-                <button id="five" class="key">4</button>
-                <button id="one" class="key">1</button>
-                <button id="decimal" class="key">.</button>
+                <button id="seven" class="key" data-value="7">7</button>
+                <button id="four" class="key" data-value="4">4</button>
+                <button id="one" class="key" data-value="1">1</button>
+                <button id="decimal" class="key" data-value=".">.</button>
             </div>
             <div class="column">
-                <button id="eight" class="key">8</button>
-                <button id="six" class="key">5</button>
-                <button id="two" class="key">2</button>
-                <button id="zero" class="key">0</button>
+                <button id="eight" class="key" data-value="8">8</button>
+                <button id="five" class="key" type="button" data-value="5">5</button>
+                <button id="two" class="key" type="button" value="2">2</button>
+                <button id="zero" class="key" type="button" value="0">0</button   >
             </div>
             <div class="column">
-                <button id="nine" class="key">9</button>
-                <button id="seven" class="key">6</button>
-                <button id="three" class="key">3</button>
-                <button id="equal" class="key">=</button>
+                <button id="nine" class="key" type="button" data-value="9">9</button>
+                <button id="six" class="key" type="button" data-value="6">6</button>
+                <button id="three" class="key" type="button" data-value="3">3<buttont>
+                <button id="equal" class="key" type="button">=</bbutton>
             </div>
             <div class="column">
-                <button id="divide" class="key">÷</button>
-                <button id="multiply" class="operatorKey">X</button>
-                <button id="minus" class="operatorKey">-</button>
-                <button id="add" class="operatorKey">+</button>
+                <button id="divide" class="key" type="button">÷</button>
+                <button id="multiply" class="operatorKey" type="button">X</button>
+                <button id="minus" class="operatorKey" type="button">--</button>
+                <button id="add" class="operatorKey" type="button">+</button>
                 </div>
             </div>
         </div>
