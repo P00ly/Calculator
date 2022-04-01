@@ -100,7 +100,7 @@
     font-size: 20px;
 }
 
-.digitKey:hover {
+.key:hover {
     cursor: pointer;
     background-color: #FFC663;
 }
