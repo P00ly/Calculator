@@ -93,11 +93,15 @@
 
 .key {
     border: 2px solid black;
-    padding: 2rem;
+    
     margin-left: 5px;
     margin-bottom: 5px;
     border-radius: 10px;
     font-size: 20px;
+    min-height: 92px;
+    min-width: 79.09px;
+    max-height: 92px;
+    max-width: 79.09px;
 }
 
 .key:hover {
