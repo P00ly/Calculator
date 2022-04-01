@@ -1,3 +1,28 @@
+
+
+const digitKey = document.querySelectorAll('[data-value]')
+const currentOperation = document.getElementById('currentOperation');
+
+
+//Digit key funcitonality #0-9
+digitKey.forEach(item => {
+    item.addEventListener('click', () => inputNumber(item.innerHTML))
+});
+
+function inputNumber(value) {
+    if (currentOperation.innerHTML === '0') {
+        currentOperation.innerHTML = '';
+    }
+    currentOperation.innerHTML += value;
+};
+
+
+
+
+
+
+
+
 //Addition function
 function add(...num) {
     return num.reduce((previous, current) => {
@@ -5,7 +30,6 @@ function add(...num) {
     });
 };
 
-console.log(add(9, 9, "addition"));
 
 //subtraction function
 function subtract(...num) {
@@ -14,7 +38,6 @@ function subtract(...num) {
     });
 };
 
-console.log(subtract(9, 6));
 
 //multiplication function
 
@@ -22,16 +45,15 @@ function multiply(...num) {
     return num.reduce((total, current) => total * current);
 }
 
-console.log(multiply(2, 2, 4));
-
 //Division function
 function divide(...num) {
     return num.reduce((total, current) => total / current);
 }
 
-console.log(divide(16, 2, 2, 2));
 
 //Operate
-function operate(operator, num1, num2) {
+function operate(a, b, operator) {
     
 }
+
+
