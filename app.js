@@ -2,7 +2,7 @@ const digitKey = document.querySelectorAll('[data-value]');
 const currentOperation = document.getElementById('currentOperation');
 const lastOperation = document.getElementById('lastOperation');
 const clearBtn = document.getElementById('clearBtn');
-
+const deleteBtn = document.getElementById('deleteBtn');
 
 //Digit key funcitonality #0-9
 digitKey.forEach(item => {
@@ -24,10 +24,20 @@ function clear() {
         currentOperation.textContent = '0';
         lastOperation.textContent = '0';
     }
-   
-    
-   
+};
+
+//Delete button functionality
+deleteBtn.addEventListener('click', deleteFunc);
+
+function deleteFunc () {
+    if (currentOperation.textContent != '0') {
+        currentOperation.textContent = currentOperation.textContent
+            .toString()
+            .slice(0, -1)
+    }
 }
+
+
 
 //Operate
 function operate(a, b, operator) {
