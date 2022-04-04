@@ -3,6 +3,8 @@ const currentOperation = document.getElementById('currentOperation');
 const lastOperation = document.getElementById('lastOperation');
 const clearBtn = document.getElementById('clearBtn');
 const deleteBtn = document.getElementById('deleteBtn');
+const decimalBtn = document.getElementById('decimal');
+
 
 //Digit key funcitonality #0-9
 digitKey.forEach(item => {
@@ -14,6 +16,8 @@ function inputNumber(value) {
         currentOperation.textContent = '';
     }
     currentOperation.textContent += value;
+    disableDecimal();
+    enableDecimal();
 };
 
 //Clear button functionality 
@@ -36,7 +40,20 @@ function deleteFunc () {
             .slice(0, -1)
     }
 }
+//Decimal rule 
+function disableDecimal() {
+    if (currentOperation.textContent.includes('.')) {
+        document.getElementById('decimal').disabled = true;
+    }
+}
 
+function enableDecimal() {
+    if (currentOperation.textContent.indexOf('.') === -1) {
+        document.getElementById('decimal').disabled = false;
+    }
+};
+
+//Division button functionality
 
 
 //Operate
