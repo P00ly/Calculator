@@ -3,10 +3,10 @@ const currentOperation = document.getElementById('currentOperation');
 const lastOperation = document.getElementById('lastOperation');
 const clearBtn = document.getElementById('clearBtn');
 const deleteBtn = document.getElementById('deleteBtn');
-const decimalBtn = document.getElementById('decimal');
+const divideBtn = document.getElementById('divide');
 
 
-//Digit key funcitonality #0-9
+//Digit key funcitonality #0-9 & '.'
 digitKey.forEach(item => {
     item.addEventListener('click', () => inputNumber(item.textContent))
 });
@@ -54,7 +54,7 @@ function enableDecimal() {
 };
 
 //Division button functionality
-
+divideBtn.addEventListener('click', )
 
 //Operate
 function operate(a, b, operator) {
