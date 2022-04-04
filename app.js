@@ -1,26 +1,49 @@
-
-
-const digitKey = document.querySelectorAll('[data-value]')
+const digitKey = document.querySelectorAll('[data-value]');
 const currentOperation = document.getElementById('currentOperation');
+const lastOperation = document.getElementById('lastOperation');
+const clearBtn = document.getElementById('clearBtn');
 
 
 //Digit key funcitonality #0-9
 digitKey.forEach(item => {
-    item.addEventListener('click', () => inputNumber(item.innerHTML))
+    item.addEventListener('click', () => inputNumber(item.textContent))
 });
 
 function inputNumber(value) {
-    if (currentOperation.innerHTML === '0') {
-        currentOperation.innerHTML = '';
+    if (currentOperation.textContent === '0') {
+        currentOperation.textContent = '';
     }
-    currentOperation.innerHTML += value;
+    currentOperation.textContent += value;
 };
 
+//Clear button functionality 
+clearBtn.addEventListener('click', clear);
 
+function clear() {
+    if (currentOperation.textContent != '0') {
+        currentOperation.textContent = '0';
+        lastOperation.textContent = '0';
+    }
+   
+    
+   
+}
 
-
-
-
+//Operate
+function operate(a, b, operator) {
+    switch (operator) {
+        case '÷':
+            return divide(a, b)
+        case 'x':
+            return multiply(a, b)
+        case '-':
+            return subtract(a, b)
+        case 'add':
+            return add(a, b)
+        default:
+            return null
+    }
+}
 
 
 //Addition function
