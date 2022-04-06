@@ -1,10 +1,46 @@
 const digitKey = document.querySelectorAll('[data-value]');
-const currentOperation = document.getElementById('currentOperation');
-const lastOperation = document.getElementById('lastOperation');
+const currentOperation_div = document.getElementById('currentOperation');
+const lastOperation_div = document.getElementById('lastOperation');
 const clearBtn = document.getElementById('clearBtn');
 const deleteBtn = document.getElementById('deleteBtn');
-const divideBtn = document.getElementById('divide');
+const operatorKey = document.querySelectorAll('[data-operator]');
+const equalKey = document.getElementById('equal');
 
+let firstNumber = '';
+let secondNumber = '';
+let operator = null;
+
+
+//Operator button functionality
+operatorKey.forEach(item => {
+    item.addEventListener('click', () => inputOperation(item.textContent))
+});
+
+function inputOperation(value) {
+    if (operator !== null) {
+    }
+    firstNumber = currentOperation_div.textContent;
+    operator = value;
+    lastOperation_div.textContent = `${firstNumber} ${operator} `;
+    currentOperation_div.textContent = '';
+};
+
+//Evaluate button functionality 
+equalKey.addEventListener('click', evaluateFunc);
+
+function evaluateFunc() {
+    if (operator === null) {
+        return
+    }
+    if (operator === '÷' && currentOperation_div === '0') {
+        alert('Hey silly, you cant divide by zero!')
+        return
+    }
+    secondNumber = currentOperation_div.textContent;
+    lastOperation_div.textContent = `${firstNumber} ${operator} ${secondNumber} =`
+    currentOperation_div.textContent = operate(firstNumber, secondNumber, operator);
+    operator = null
+};
 
 //Digit key funcitonality #0-9 & '.'
 digitKey.forEach(item => {
@@ -12,10 +48,10 @@ digitKey.forEach(item => {
 });
 
 function inputNumber(value) {
-    if (currentOperation.textContent === '0') {
-        currentOperation.textContent = '';
+    if (currentOperation_div.textContent === '0') {
+        currentOperation_div.textContent = '';
     }
-    currentOperation.textContent += value;
+    currentOperation_div.textContent += value;
     disableDecimal();
     enableDecimal();
 };
@@ -24,9 +60,12 @@ function inputNumber(value) {
 clearBtn.addEventListener('click', clear);
 
 function clear() {
-    if (currentOperation.textContent != '0') {
-        currentOperation.textContent = '0';
-        lastOperation.textContent = '0';
+    if (currentOperation_div.textContent != '0') {
+        currentOperation_div.textContent = '0';
+        lastOperation_div.textContent = '0';
+        firstOperand = '';
+        secondOperand = '';
+        operator = 'null';
     }
 };
 
@@ -34,78 +73,58 @@ function clear() {
 deleteBtn.addEventListener('click', deleteFunc);
 
 function deleteFunc () {
-    if (currentOperation.textContent != '0') {
-        currentOperation.textContent = currentOperation.textContent
+    if (currentOperation_div.textContent != '0') {
+        currentOperation_div.textContent = currentOperation_div.textContent
             .toString()
             .slice(0, -1)
     }
 }
-//Decimal rule 
+//Decimal rules
 function disableDecimal() {
-    if (currentOperation.textContent.includes('.')) {
+    if (currentOperation_div.textContent.includes('.')) {
         document.getElementById('decimal').disabled = true;
     }
 }
 
 function enableDecimal() {
-    if (currentOperation.textContent.indexOf('.') === -1) {
+    if (currentOperation_div.textContent.indexOf('.') === -1) {
         document.getElementById('decimal').disabled = false;
     }
 };
 
-//Division button functionality
-divideBtn.addEventListener('click', )
-
-//Operate
-function operate(a, b, operator) {
-    switch (operator) {
-        case '÷':
-            return divide(a, b)
-        case 'x':
-            return multiply(a, b)
-        case '-':
-            return subtract(a, b)
-        case 'add':
-            return add(a, b)
-        default:
-            return null
-    }
-}
+//create event listener for equal button
 
 
 //Addition function
-function add(...num) {
-    return num.reduce((previous, current) => {
-        return previous + current;
-    });
+function add(a, b) {
+   return a + b;
 };
-
-
 //subtraction function
-function subtract(...num) {
-    return num.reduce((previous, current) => {
-        return previous - current;
-    });
+function subtract(a, b) {
+    return a - b;
 };
-
 
 //multiplication function
 
-function multiply(...num) {
-    return num.reduce((total, current) => total * current);
-}
+function multiply(a, b) {
+    return a * b; 
+};
 
 //Division function
-function divide(...num) {
-    return num.reduce((total, current) => total / current);
-}
-
+function divide(a, b) {
+    return a / b;
+};
 
 //Operate
 function operate(a, b, operator) {
+    a = Number(a)
+    b = Number(b)
     switch (operator) {
         case '÷':
-            return divide(a, b)
+            if (b === 0) {
+                return null
+            }
+            else return divide(a, b)
         case 'x':   
             return multiply(a, b)
         case '-':
