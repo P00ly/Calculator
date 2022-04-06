@@ -64,12 +64,13 @@
     border: 2px solid black;
     height: 3rem;
     flex-direction: column;
-    text-align: center;
     flex-basis: 100%;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    align-items: center;
     margin-left: 1rem;
     margin-right: 1rem;
+    padding-top: .5rem;
 }
 
 .clearBtn:hover {
