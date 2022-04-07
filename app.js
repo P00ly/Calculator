@@ -18,6 +18,7 @@ operatorKey.forEach(item => {
 
 function inputOperation(value) {
     if (operator !== null) {
+        return evaluateFunc()
     }
     firstNumber = currentOperation_div.textContent;
     operator = value;
@@ -29,9 +30,7 @@ function inputOperation(value) {
 equalKey.addEventListener('click', evaluateFunc);
 
 function evaluateFunc() {
-    if (operator === null) {
-        return
-    }
+    if (operator === null) return
     if (operator === '÷' && currentOperation_div === '0') {
         alert('Hey silly, you cant divide by zero!')
         return
@@ -41,6 +40,7 @@ function evaluateFunc() {
     currentOperation_div.textContent = operate(firstNumber, secondNumber, operator);
     operator = null
 };
+
 
 //Digit key funcitonality #0-9 & '.'
 digitKey.forEach(item => {
@@ -129,7 +129,7 @@ function operate(a, b, operator) {
             return multiply(a, b)
         case '-':
             return subtract(a, b)
-        case 'add':
+        case '+':
             return add(a, b)
         default:
             return null 
