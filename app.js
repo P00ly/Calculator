@@ -9,7 +9,7 @@ const equalKey = document.getElementById('equal');
 let firstNumber = '';
 let secondNumber = '';
 let operator = null;
-
+let resetScreen = false;
 
 //Operator button functionality
 operatorKey.forEach(item => {
@@ -24,13 +24,14 @@ function inputOperation(value) {
     operator = value;
     lastOperation_div.textContent = `${firstNumber} ${operator} `;
     currentOperation_div.textContent = '';
+    resetScreen = true;
 };
 
 //Evaluate button functionality 
 equalKey.addEventListener('click', evaluateFunc);
 
 function evaluateFunc() {
-    if (operator === null) return
+    if (operator === null || resetScreen) return
     if (operator === '÷' && currentOperation_div === '0') {
         alert('Hey silly, you cant divide by zero!')
         return
@@ -48,7 +49,8 @@ digitKey.forEach(item => {
 });
 
 function inputNumber(value) {
-    if (currentOperation_div.textContent === '0') {
+    if (currentOperation_div.textContent === '0' || resetScreen) {
+        reset()
         currentOperation_div.textContent = '';
     }
     currentOperation_div.textContent += value;
@@ -56,13 +58,19 @@ function inputNumber(value) {
     enableDecimal();
 };
 
+//Reset function
+function reset() {
+    currentOperation_div.textContent = ''
+    resetScreen = false;
+}
+
 //Clear button functionality 
 clearBtn.addEventListener('click', clear);
 
 function clear() {
     if (currentOperation_div.textContent != '0') {
         currentOperation_div.textContent = '0';
-        lastOperation_div.textContent = '0';
+        lastOperation_div.textContent = '';
         firstOperand = '';
         secondOperand = '';
         operator = 'null';
