@@ -101,8 +101,6 @@
     font-size: 20px;
     min-height: 92px;
     min-width: 79.09px;
-    max-height: 92px;
-    max-width: 79.09px;
 }
 
 .key:hover {
@@ -117,6 +115,11 @@
     margin-bottom: 5px;
     border-radius: 10px;
     font-size: 20px;
+    background-color: bisque;
+}
+
+.minus {
+    width: 77.73px;
 }
 
 .operatorKey:hover {
