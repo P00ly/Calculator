@@ -7,5 +7,21 @@
 
 
 ### Overview:
-This is a calculator app
+This is an on calculator app that is capable of doing elementary level arithmatic. 
+
+##Features:
+- Cabable of division, subtraction, addition and multiplication
+- Backspace button to delete one number at a time from the input
+- Clear button to clear the calculator of current input and previous calculations
+- Decimal button
+- Error alert to prevent user from dividing by 0
+- Calculates a single pair of numbers at a time
+- Operator and decimal buttons are prevented from being pushed twice
+
+## Third Party Code:
+- Google fonts
+- Font Awesome Icons
+
+## Outcome: 
+- 
 
