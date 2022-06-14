@@ -23,5 +23,7 @@ This is an on calculator app that is capable of doing elementary level arithmati
 - Font Awesome Icons
 
 ## Outcome: 
-- 
+- Utilized CSS Flexbox to create layout
+- Utilied a JS switch statement to write the logic for operation keys
+- Learned more about the importance of breaking functions down into smaller functions to increase reusability throughout the project
 
