@@ -7,7 +7,7 @@
 
 
 ### Overview:
-This is an on calculator app that is capable of doing elementary level arithmatic. 
+This is an on calculator app that is capable of doing basic arithmatic. 
 
 ##Features:
 - Cabable of division, subtraction, addition and multiplication
